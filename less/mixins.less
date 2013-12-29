@@ -737,6 +737,10 @@
   .col(1, '.col'); // kickstart it
 }
 
+// https://github.com/leafo/lessphp/issues/491#issuecomment-31226429
+.calc-grid(@index, @class, @type) when (@index < 1) {}
+.make-grid(@index, @class, @type) when (@index < 1) {}
+
 .calc-grid(@index, @class, @type) when (@type = width) and (@index > 0) {
   .col-@{class}-@{index} {
     width: percentage((@index / @grid-columns));
